@@ -4,6 +4,9 @@ export const initialState = []
 
 export const todoReducer = (state: TodoState, action: TodoActions): TodoState => {
     switch (action.type) {
+        case 'SET_DEFAULT':
+            return action.payload
+
         case 'ADD':
             return [...state, action.payload]
 
