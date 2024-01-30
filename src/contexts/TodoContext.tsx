@@ -11,7 +11,7 @@ type ContextType = {
     dispatch: React.Dispatch<TodoActions>
 }
 
-export const Context = createContext<ContextType>({
+export const TodoContext = createContext<ContextType>({
     state: initialState,
     dispatch: () => null
 })
@@ -20,8 +20,8 @@ export const TodoContextProvider = ({ children }: Props) => {
     const [state, dispatch] = useReducer(todoReducer, initialState)
 
     return (
-        <Context.Provider value={{ state, dispatch }}>
+        <TodoContext.Provider value={{ state, dispatch }}>
             {children}
-        </Context.Provider>
+        </TodoContext.Provider>
     )
 }
