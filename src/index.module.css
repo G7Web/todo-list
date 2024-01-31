@@ -11,6 +11,8 @@
     --blue: #4EA8DE;
     --blueDark: #1E6F9F;
     --red: #E25858;
+    --maxWidthApp: 800px;
+
 }
 
 body {

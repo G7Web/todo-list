@@ -4,7 +4,7 @@ import { AES, enc } from 'crypto-js';
 import { Todo } from "../@types/Todo";
 
 const SECRET_KEY = import.meta.env.VITE_SECRET_KEY as string
-const LOCAL_STORAGE_KEY = 'TODO_DATA'
+const LOCAL_STORAGE_KEY = 'TODOS_DATA'
 
 export const useSaveTodos = () => {
     const [gottedInitialData, setGottedInitialData] = useState(false)
@@ -29,11 +29,12 @@ export const useSaveTodos = () => {
                 const decryptedData: Todo[] = JSON.parse(bytes.toString(enc.Utf8))
 
                 dispatch({ type: 'SET_DEFAULT', payload: decryptedData })
-                setGottedInitialData(true)
             }
         } catch {
             alert('Não foi possível obter as tarefas salvas!')
         }
+
+        setGottedInitialData(true)
     }, [])
 
     // Monitoring all changes on todos
