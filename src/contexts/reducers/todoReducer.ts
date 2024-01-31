@@ -4,11 +4,9 @@ export const initialState = []
 
 export const todoReducer = (state: TodoState, action: TodoActions): TodoState => {
     switch (action.type) {
-        case 'SET_DEFAULT':
-            return action.payload
-
         case 'ADD':
-            return [...state, action.payload]
+            const { payload } = action;
+            return !Array.isArray(payload) ? [...state, payload] : payload
 
         case 'CHANGE':
             const changedTodos = state.map((item, key) => {
@@ -21,10 +19,10 @@ export const todoReducer = (state: TodoState, action: TodoActions): TodoState =>
             })
 
             return changedTodos
-        
+
         case 'DELETE':
             return state.filter((_item, key) => key != action.payload.index)
-        
+
         default:
             return state
     }

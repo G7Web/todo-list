@@ -2,14 +2,9 @@ import { Todo } from "./Todo"
 
 export type TodoState = Todo[]
 
-type SetDefaultTodos = {
-    type: 'SET_DEFAULT',
-    payload: Todo[]
-}
-
 type AddTodo = {
     type: 'ADD',
-    payload: Todo
+    payload: Todo | Todo[]
 }
 
 type ChangeTodo = {
@@ -22,4 +17,4 @@ type DeleteTodo = {
     payload: { index: number }
 }
 
-export type TodoActions = SetDefaultTodos | AddTodo | ChangeTodo | DeleteTodo
+export type TodoActions = AddTodo | ChangeTodo | DeleteTodo

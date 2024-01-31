@@ -28,7 +28,7 @@ export const useSaveTodos = () => {
                 const bytes = AES.decrypt(todoData, SECRET_KEY)
                 const decryptedData: Todo[] = JSON.parse(bytes.toString(enc.Utf8))
 
-                dispatch({ type: 'SET_DEFAULT', payload: decryptedData })
+                dispatch({ type: 'ADD', payload: decryptedData })
             }
         } catch {
             alert('Não foi possível obter as tarefas salvas!')
