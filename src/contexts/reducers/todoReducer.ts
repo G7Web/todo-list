@@ -11,8 +11,8 @@ export const todoReducer = (state: TodoState, action: TodoActions): TodoState =>
         case 'CHANGE':
             const changedTodos = state.map((item, key) => {
                 if (key == action.payload.index) {
-                    item.title = action.payload.title
-                    item.isDone = action.payload.isDone
+                    item.title = action.payload.title ?? item.title
+                    item.isDone = action.payload.isDone ?? item.isDone
                 }
 
                 return item

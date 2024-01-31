@@ -7,9 +7,13 @@ type AddTodo = {
     payload: Todo | Todo[]
 }
 
+type TodoWithOptionalProps = {
+    [Key in keyof Todo]?: Todo[Key]
+}
+
 type ChangeTodo = {
     type: 'CHANGE',
-    payload: Todo & { index: number }
+    payload: TodoWithOptionalProps & { index: number }
 }
 
 type DeleteTodo = {

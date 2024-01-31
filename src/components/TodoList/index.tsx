@@ -9,13 +9,15 @@ export const TodoList = () => {
 
     return (
         <div className={styles.container}>
-            <div className={styles.infoTasksContainer}>
-                <span className={styles.infoDoneTasks}>Concluídas</span>
+            {todos.length > 0 &&
+                <div className={styles.infoTasksContainer}>
+                    <span className={styles.infoDoneTasks}>Concluídas</span>
 
-                <div className={styles.infoCountDoneTasks}>
-                    2 de 8
+                    <div className={styles.infoCountDoneTasks}>
+                        {todos.filter(item => item.isDone).length} de {todos.length}
+                    </div>
                 </div>
-            </div>
+            }
 
             {todos.length < 1 &&
                 <div className={styles.emptyContainer}>
@@ -34,6 +36,7 @@ export const TodoList = () => {
                     <TodoItem
                         key={key}
                         data={data}
+                        dataIndex={key}
                     />
                 ))}
             </div>
