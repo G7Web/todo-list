@@ -25,3 +25,9 @@
 .newTaskInput {
     flex: 1;
 }
+
+@media (max-width: 840px) {
+    .container {
+        padding: 0 10px;
+    }
+}

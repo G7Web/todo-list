@@ -1,0 +1,24 @@
+.container {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background-color: var(--gray500);
+    border: 1px solid var(--gray400);
+    border-radius: 6px;
+    padding: 20px;
+}
+
+.taskTitleContainer {
+    flex: 1;
+}
+
+.deleteTaskBtn {
+    outline: none;
+    border: none;
+    padding: 0px 2px;
+
+}
+
+.deleteTaskBtn:hover svg path {
+    fill: var(--red);
+}

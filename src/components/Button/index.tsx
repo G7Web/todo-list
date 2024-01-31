@@ -1,4 +1,5 @@
 import styles from './Button.module.css'
+import AddIcon from '../../assets/add.svg?react'
 
 type Props = {
     onClick: () => void
@@ -9,7 +10,8 @@ export const Button = ({ onClick }: Props) => {
         <div className={styles.container}>
             <button onClick={onClick}>
                 Criar
-                <img src='/icons/add.svg' />
+                
+                <AddIcon />
             </button>
         </div>
     )
