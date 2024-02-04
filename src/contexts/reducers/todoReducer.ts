@@ -1,6 +1,6 @@
 import { TodoActions, TodoState } from "../../@types/TodoReducer"
 
-export const initialState = []
+export const initialState: TodoState = []
 
 export const todoReducer = (state: TodoState, action: TodoActions): TodoState => {
     switch (action.type) {
