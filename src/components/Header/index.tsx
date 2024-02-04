@@ -14,9 +14,9 @@ export const Header = () => {
             alert('Digite um título para a nova tarefa')
             return;
         }
-
-        setInputValue('')
+ 
         dispatch({ type: 'ADD', payload: { title: inputValue, isDone: false } })
+        setInputValue('')
     }
 
     return (

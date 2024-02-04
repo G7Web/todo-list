@@ -1,6 +1,6 @@
 import { Todo } from '../../@types/Todo';
 import styles from './TodoItem.module.css';
-import ReactComponent from '../../assets/trash.svg?react';
+import TrashIcon from '../../assets/trash.svg?react';
 import { ChangeEvent, useContext } from 'react';
 import { TodoContext } from '../../contexts/TodoContext';
 
@@ -38,7 +38,7 @@ export const TodoItem = ({ data, dataIndex }: Props) => {
                     className={styles.deleteTaskBtn}
                     onClick={handleDeleteTodo}
                 >
-                    <ReactComponent />
+                    <TrashIcon />
                 </button>
             </div>
         </div>
